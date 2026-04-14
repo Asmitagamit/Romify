@@ -14,3 +14,46 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+# 🏠 Roomify Frontend
+
+## 📌 Overview
+
+Frontend of Roomify PG management system built using React.js. It allows users and owners to browse PGs, manage bookings, and interact with the system.
+
+---
+
+## ⚙️ Tech Stack
+
+* React.js (Vite)
+* React Router
+* Axios
+* Bootstrap
+
+---
+
+## 🚀 Features
+
+* Login & Signup
+* PG Listings & Details
+* User & Owner Dashboards
+* Booking System
+* Reviews & Ratings
+* Chatbot Interface
+
+---
+
+## ▶️ Run Project
+
+cd frontend
+npm install
+npm run dev
+
+Runs on: http://localhost:5173
+
+---
+
+## 👩‍💻 Author
+
+Asmita Gamit
