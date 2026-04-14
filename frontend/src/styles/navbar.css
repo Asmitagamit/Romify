@@ -1,0 +1,176 @@
+/* --- NAVBAR STYLING --- */
+.luxe-navbar {
+  height: 80px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.nav-container {
+  width: 95%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+/* --- LOGO --- */
+.nav-logo img {
+  height: 42px;
+  width: auto;
+  display: block;
+}
+
+/* --- SEARCH WRAPPER --- */
+.search-wrapper {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  background: #f1f5f9;
+  padding: 6px 6px 6px 18px;
+  border-radius: 50px;
+  border: 1px solid transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search-wrapper:focus-within {
+  background: white;
+  border-color: #B87333;
+  box-shadow: 0 10px 25px rgba(184, 115, 51, 0.1);
+}
+
+.search-icon {
+  color: #64748b;
+  margin-right: 12px;
+}
+
+.search-wrapper input {
+  border: none;
+  background: transparent;
+  outline: none;
+  flex: 1;
+  font-size: 15px;
+  color: #132B6B;
+  font-weight: 500;
+}
+
+.search-submit-btn {
+  background: #132B6B;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-submit-btn:hover {
+  background: #B87333; /* Shifts to Copper */
+}
+
+/* --- AUTH PILL --- */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.auth-pill {
+  display: flex;
+  align-items: center;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 4px;
+  border-radius: 50px;
+}
+
+.auth-item {
+  text-decoration: none;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.login-link {
+  color: #64748b;
+}
+
+.login-link:hover {
+  color: #132B6B;
+}
+
+.signup-link {
+  background: #B87333; /* Copper Primary */
+  color: white;
+  box-shadow: 0 4px 12px rgba(184, 115, 51, 0.2);
+}
+
+.signup-link:hover {
+  background: #a0632a;
+  transform: translateY(-1px);
+}
+
+.pill-divider {
+  width: 1px;
+  height: 20px;
+  background: #cbd5e1;
+}
+
+/* --- HELP LINK --- */
+/* .help-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #132B6B;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.help-link:hover {
+  color: #B87333;
+} */
+.help-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--primary-navy);
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.help-link:hover {
+  background: #f1f5f9;
+  color: var(--cta-copper);
+}
+
+/* 💎 Active state when on the Help page */
+.active-link {
+  background: #fff9f2; /* Light copper tint */
+  color: var(--cta-copper) !important;
+  border-color: rgba(184, 115, 51, 0.2);
+  box-shadow: 0 4px 12px rgba(184, 115, 51, 0.05);
+}
+/* --- MOBILE --- */
+@media (max-width: 1024px) {
+  .search-wrapper { max-width: 300px; }
+}
+
+@media (max-width: 768px) {
+  .search-wrapper, .auth-pill { display: none; }
+}

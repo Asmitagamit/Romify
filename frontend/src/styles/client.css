@@ -1,0 +1,447 @@
+/* --- DASHBOARD ROOT & LAYOUT --- */
+.luxe-dashboard-root {
+  background: #f8fafc;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: #1e293b;
+}
+
+.dashboard-main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 5%;
+}
+
+/* --- HERO SECTION --- */
+.dashboard-hero {
+  padding-top: 70px;
+  margin-bottom: 40px;
+}
+
+.hero-profile-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.luxe-avatar {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #132B6B, #1e3a8a);
+  color: white;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 800;
+  box-shadow: 0 10px 20px rgba(19, 43, 107, 0.15);
+}
+
+.luxe-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #132B6B;
+  letter-spacing: -0.02em;
+}
+
+.luxe-subtitle {
+  color: #64748b;
+  font-size: 16px;
+}
+
+/* --- TABS NAVIGATION --- */
+.dashboard-tabs-nav {
+  display: flex;
+  gap: 10px;
+  background: #edf2f7;
+  padding: 6px;
+  border-radius: 14px;
+  width: fit-content;
+}
+
+.tab-btn {
+  padding: 10px 24px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+  background: white;
+  color: #B87333; /* Updated to Copper */
+  box-shadow: 0 4px 12px rgba(184, 115, 51, 0.1);
+}
+
+.luxe-divider {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, #e2e8f0, transparent);
+  margin: 40px 0;
+}
+
+/* --- GRID SYSTEMS --- */
+.pg-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.content-heading {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #132B6B;
+}
+
+/* --- BOOKING CARDS --- */
+.booking-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.booking-card {
+  display: flex;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+  transition: transform 0.3s ease;
+}
+
+.booking-card:hover {
+  transform: translateX(8px);
+}
+
+.booking-img {
+  width: 240px;
+  height: 180px;
+  object-fit: cover;
+}
+
+.booking-content {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.status-pill {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.status-pill.approved { background: #dcfce7; color: #166534; }
+.status-pill.pending { background: #fef9c3; color: #854d0e; }
+.status-pill.rejected { background: #fee2e2; color: #991b1b; }
+
+.booking-details-luxe {
+  display: flex;
+  gap: 30px;
+  margin: 15px 0;
+  font-size: 14px;
+  color: #475569;
+}
+
+/* --- COPPER BUTTONS & ACTIONS --- */
+.booking-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.view-receipt-btn, .explore-btn {
+  background: #B87333; /* Copper Primary */
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(184, 115, 51, 0.2);
+}
+
+.view-receipt-btn:hover, .explore-btn:hover {
+  background: #a0632a; /* Darker Copper */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(184, 115, 51, 0.35);
+}
+
+.delete-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ef4444;
+  background: #fef2f2;
+  border: 1px solid #fee2e2;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.delete-btn:hover {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* --- PROFILE CARD --- */
+.luxe-card-flat {
+  background: white;
+  padding: 30px;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+.detail-item {
+  margin-bottom: 20px;
+}
+
+.detail-item label {
+  display: block;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #94a3b8;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.detail-item p {
+  font-size: 18px;
+  font-weight: 600;
+  color: #132B6B;
+}
+
+/* --- MISC --- */
+.luxe-loader-text {
+  color: #B87333;
+  font-weight: 600;
+  text-align: center;
+  padding: 40px;
+}
+
+.empty-state-luxe {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 24px;
+  border: 2px dashed #e2e8f0;
+}
+
+/* --- ANIMATIONS --- */
+.section-fade {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+  .booking-card { flex-direction: column; }
+  .booking-img { width: 100%; height: 200px; }
+  .dashboard-tabs-nav { width: 100%; overflow-x: auto; padding-bottom: 10px; }
+  .luxe-title { font-size: 24px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- 1. INLINE FORM CONTAINER --- */
+.inline-receipt-container {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  border: 2px solid #F1F5F9;
+  margin: 15px 0;
+  box-shadow: 0 8px 30px rgba(19, 43, 107, 0.04);
+  animation: slideDownIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideDownIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 2. GRID INPUTS --- */
+.receipt-grid-inputs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.bill-input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mini-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #64748B; /* Slate Muted */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.bill-input input {
+  background: #F8FAFC;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 700;
+  color: var(--primary-navy);
+  transition: 0.3s;
+}
+
+.bill-input input:focus {
+  background: white;
+  border-color: var(--cta-copper);
+  box-shadow: 0 0 0 4px rgba(184, 115, 51, 0.08);
+  outline: none;
+}
+
+/* --- 3. SIGNATURE UPLOAD --- */
+.sig-row {
+  background: #FDFBF7; /* Soft Gold Tint */
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px dashed var(--accent-gold);
+  margin-top: 25px;
+}
+
+.sig-row input[type="file"] {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #64748B;
+  cursor: pointer;
+}
+
+/* Customizing the "Choose File" button appearance */
+.sig-row input[type="file"]::file-selector-button {
+  background: var(--primary-navy);
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.sig-row input[type="file"]::file-selector-button:hover {
+  background: var(--cta-copper);
+}
+
+/* --- 4. ACTION ROW & TOTAL --- */
+.receipt-action-row {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1.5px solid #F1F5F9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-tag {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color: var(--primary-navy);
+  background: #F1F5F9;
+  padding: 8px 20px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.price-tag::before {
+  content: 'Grand ';
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: #64748B;
+  letter-spacing: 1px;
+}
+
+/* --- 5. BUTTONS --- */
+.btn-group {
+  display: flex;
+  gap: 12px;
+}
+
+.luxe-submit-btn {
+  background: var(--primary-navy);
+  color: white;
+  padding: 0 25px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.luxe-submit-btn:hover {
+  background: #10B981; /* Turns Success Green on ready-to-save */
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(16, 185, 129, 0.2);
+}
+
+.luxe-cancel-btn {
+  background: white;
+  color: #64748B;
+  border: 1.5px solid #E2E8F0;
+  padding: 0 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.luxe-cancel-btn:hover {
+  background: #FFF1F2;
+  color: #E11D48;
+  border-color: #FECDD3;
+}
+
+/* --- 6. RESPONSIVE --- */
+@media (max-width: 768px) {
+  .receipt-grid-inputs {
+    grid-template-columns: 1fr 1fr;
+  }
+}

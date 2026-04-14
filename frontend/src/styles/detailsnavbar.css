@@ -1,0 +1,148 @@
+:root {
+  --primary: #ff385c;
+  --text-dark: #222222;
+  --text-light: #717171;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --nav-height: 80px;
+  --nav-scroll-height: 70px;
+  --transition-luxe: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.details-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  z-index: 1100; /* Ensure it stays above EVERYTHING */
+  transition: var(--transition-luxe);
+  background: transparent;
+  display: flex;
+  align-items: center;
+}
+
+/* --- Scrolled State (Glassmorphism) --- */
+.details-nav.nav-scrolled {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  height: var(--nav-scroll-height);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* --- Circle Buttons (Back & Home) --- */
+.nav-circle-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-dark);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.nav-circle-btn:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-color: rgba(0,0,0,0.15);
+}
+
+/* --- Floating Title (The "Magic" part) --- */
+.nav-pg-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-dark);
+  opacity: 0;
+  transform: translateX(-10px); /* Slides in from left */
+  transition: var(--transition-luxe);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+}
+
+.nav-pg-title.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --- Action Buttons (Share & Save) --- */
+.nav-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: transparent;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-action-btn span {
+  display: inline-block; /* Essential for mobile hiding later */
+}
+
+.nav-action-btn:hover {
+  background: rgba(0, 0, 0, 0.04);
+  transform: translateY(-1px);
+}
+
+.nav-action-btn:active {
+  transform: translateY(0) scale(0.96);
+}
+
+/* Save Button Active State */
+.fav-active {
+  color: var(--primary);
+  background: rgba(255, 56, 92, 0.05) !important;
+}
+
+.fav-active svg {
+  filter: drop-shadow(0 0 2px rgba(255, 56, 92, 0.2));
+}
+
+/* --- Mobile Fixes --- */
+@media (max-width: 600px) {
+  .nav-action-btn span {
+    display: none; /* Hide "Share" and "Save" text on small screens */
+  }
+  
+  .nav-action-btn {
+    padding: 10px;
+    border-radius: 50%; /* Turn them into circle buttons too */
+    background: white;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .nav-pg-title {
+    max-width: 150px;
+    font-size: 0.9rem;
+  }
+}

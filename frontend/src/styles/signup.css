@@ -1,0 +1,91 @@
+/* Background */
+.signup-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:  #FFFFFF;
+  /* background: linear-gradient(135deg, #B87333,#2563EB); */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Card */
+.signup-box {
+  text-align: center;
+  animation: fadeIn 0.4s ease-in-out;
+  width: 420px;
+  background: #E9E9E9;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    border: 3px solid transparent;
+  background: 
+    linear-gradient(#E9E9E9, #E9E9E9) padding-box,
+    linear-gradient(135deg, #B87333, #132b6b) border-box;
+
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+
+/* Title */
+.signup-title {
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Form layout */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Inputs & Select */
+.signup-form input,
+.signup-form select {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.signup-form input:focus,
+.signup-form select:focus {
+  border-color: #132b6b;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+/* Button */
+.signup-form button {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #B87333;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.signup-form button:hover {
+  background: #ee811c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

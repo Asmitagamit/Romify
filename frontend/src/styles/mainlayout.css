@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.mainnav {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #eef5ff;
+  font-family: Arial, sans-serif;
+}
+
+.maincontent {
+  flex: 1;
+  padding: 30px;
+}
+
+.section-title {
+  color: #1e40af;
+  margin-bottom: 20px;
+}

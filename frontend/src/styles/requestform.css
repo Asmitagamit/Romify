@@ -1,0 +1,188 @@
+/* --- 1. MODAL OVERLAY --- */
+.luxe-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(19, 43, 107, 0.75); /* Deep Navy Tint */
+  backdrop-filter: blur(12px); /* Premium Glass Effect */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* --- 2. MODAL CONTENT BOX --- */
+.luxe-modal-content {
+  background: #ffffff;
+  width: 100%;
+  max-width: 550px;
+  border-radius: 24px;
+  padding: 40px;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--accent-gold, #E2C18D);
+  animation: slideInUp 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* --- 3. CLOSE BUTTON --- */
+.modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: #f8fafc;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #132B6B;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  background: #ff7675;
+  color: white;
+  transform: rotate(90deg);
+}
+
+/* --- 4. HEADER --- */
+.modal-header {
+  margin-bottom: 30px;
+  border-bottom: 1.5px solid #f1f5f9;
+  padding-bottom: 15px;
+}
+
+.modal-header h2 {
+  color: #132B6B;
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.modal-header p {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-top: 8px;
+}
+
+.modal-header strong {
+  color: #B87333; /* Copper highlight for property name */
+}
+
+/* --- 5. FORM LAYOUT --- */
+.luxe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #132B6B;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- 6. INPUTS & TEXTAREA --- */
+.luxe-form input, 
+.luxe-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  color: #132B6B;
+}
+
+/* Read-only state for Name/Email */
+.luxe-form input[readonly] {
+  background: #f1f5f9;
+  color: #94a3b8;
+  cursor: not-allowed;
+  border-style: dashed;
+}
+
+.luxe-form input:focus, 
+.luxe-form textarea:focus {
+  outline: none;
+  background: #ffffff;
+  border-color: #B87333; /* Copper Focus */
+  box-shadow: 0 0 0 4px rgba(184, 115, 51, 0.1);
+}
+
+.luxe-form textarea {
+  resize: none;
+  min-height: 100px;
+}
+
+/* --- 7. SUBMIT BUTTON --- */
+.luxe-submit-btn {
+  background: #B87333; /* Copper Button */
+  color: #ffffff;
+  padding: 16px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 20px rgba(184, 115, 51, 0.3);
+}
+
+.luxe-submit-btn:hover {
+  background: #a0632a;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(184, 115, 51, 0.4);
+}
+
+.luxe-submit-btn:active {
+  transform: translateY(0);
+}
+
+/* --- 8. MOBILE RESPONSIVE --- */
+@media (max-width: 600px) {
+  .luxe-modal-content {
+    padding: 30px 20px;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr; /* Stack inputs on mobile */
+    gap: 15px;
+  }
+}

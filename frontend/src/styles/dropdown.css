@@ -1,0 +1,170 @@
+/* --- 1. DROPDOWN CONTAINER --- */
+/* .luxe-dropdown-container {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+} */
+
+.dropdown-label {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--primary-navy);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dropdown-relative {
+  position: relative;
+}
+
+/* --- 2. TRIGGER BUTTON --- */
+.luxe-dropdown-trigger {
+  width: 100%;
+  height: 52px; /* Synced with your main form buttons */
+  padding: 0 18px;
+  background: var(--white);
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--primary-navy);
+}
+
+.luxe-dropdown-trigger:hover {
+  border-color: var(--accent-gold);
+  background: #f8fafc;
+}
+
+.luxe-dropdown-trigger.active {
+  border-color: var(--cta-copper);
+  box-shadow: 0 0 0 4px rgba(184, 115, 51, 0.1);
+}
+
+.luxe-dropdown-trigger .arrow {
+  color: var(--accent-gold);
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.luxe-dropdown-trigger.active .arrow {
+  transform: rotate(180deg);
+}
+
+/* --- 3. THE MENU --- */
+.luxe-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(19, 43, 107, 0.15);
+  border: 1.5px solid var(--accent-gold);
+  z-index: 100;
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 8px;
+  /* Smooth entry animation */
+  animation: dropdownSlide 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes dropdownSlide {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 4. OPTIONS & CUSTOM CHECKS --- */
+.dropdown-option {
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--primary-navy);
+  transition: 0.2s;
+}
+
+.dropdown-option:hover {
+  background: #f9f5f0; /* Soft gold tint */
+}
+
+/* Hide default checkbox */
+.dropdown-option input[type="checkbox"] {
+  display: none;
+}
+
+/* The circular Luxe check */
+.custom-check {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--accent-gold);
+  border-radius: 50%;
+  margin-right: 12px;
+  position: relative;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.dropdown-option input:checked + .custom-check {
+  background: var(--cta-copper);
+  border-color: var(--cta-copper);
+}
+
+.dropdown-option input:checked + .custom-check::after {
+  content: '✓';
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  left: 4px;
+  top: 0px;
+}
+
+/* --- 5. SELECTED TAGS --- */
+.selected-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.luxe-tag {
+  background: var(--primary-navy);
+  color: var(--accent-gold);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(19, 43, 107, 0.1);
+}
+
+.luxe-tag button {
+  background: rgba(226, 193, 141, 0.15);
+  border: none;
+  color: var(--accent-gold);
+  cursor: pointer;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.luxe-tag button:hover {
+  background: var(--cta-copper);
+  color: white;
+}

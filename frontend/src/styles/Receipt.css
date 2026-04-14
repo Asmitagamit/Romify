@@ -1,0 +1,245 @@
+/* --- 1. STAGE & BACKGROUND --- */
+.receipt-view-root {
+  background: #e2e8f0; /* Muted background to make the paper "pop" */
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.document-stage {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+/* --- 2. THE PAPER (The Hero) --- */
+.luxe-receipt-paper {
+  background: #ffffff;
+  width: 100%;
+  max-width: 800px;
+  padding: 60px 80px;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  border: 1px solid #d1d5db;
+  overflow: hidden; /* For the watermark */
+}
+
+/* Professional Watermark */
+.receipt-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  font-size: 10rem;
+  font-weight: 900;
+  color: rgba(19, 43, 107, 0.03); /* Extremely faint Navy */
+  letter-spacing: 20px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- 3. HEADER & BRANDING --- */
+.receipt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 2px solid var(--primary-navy, #132B6B);
+  padding-bottom: 30px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.branding h1 {
+  color: #132B6B;
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.branding p {
+  color: #B87333; /* Copper accent */
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.receipt-meta {
+  text-align: right;
+}
+
+.receipt-meta .type {
+  display: block;
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: #132B6B;
+}
+
+.receipt-meta .number {
+  display: block;
+  font-size: 1.2rem;
+  color: #64748b;
+  margin-top: 5px;
+}
+
+/* --- 4. BODY DATA --- */
+.receipt-body {
+  position: relative;
+  z-index: 1;
+}
+
+.data-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.data-field label {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #94a3b8;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.data-field p {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.narrative {
+  background: #f8fafc;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  line-height: 1.8;
+  border-left: 4px solid #E2C18D; /* Gold Accent */
+}
+
+.narrative address {
+  font-style: normal;
+  font-weight: 700;
+  color: #132B6B;
+  margin-top: 10px;
+}
+
+/* --- 5. CHARGES TABLE --- */
+.charges-table {
+  margin-bottom: 60px;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1.5px solid #e2e8f0;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.table-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.95rem;
+}
+
+.table-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  margin-top: 10px;
+  border-top: 2px solid #132B6B;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #132B6B;
+}
+
+/* --- 6. FOOTER & SIGNATURE --- */
+.receipt-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 40px;
+}
+
+.signature-area {
+  text-align: center;
+}
+
+.signature-area img {
+  max-width: 150px;
+  max-height: 60px;
+  margin-bottom: -10px;
+  filter: grayscale(1) contrast(1.2); /* Makes digital signatures look real */
+}
+
+.sig-line {
+  width: 200px;
+  height: 1.5px;
+  background: #1e293b;
+  margin-bottom: 10px;
+}
+
+.signature-area p {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.footer-note p {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  max-width: 300px;
+  text-align: right;
+  line-height: 1.5;
+}
+
+/* --- 7. CONTROLS (Floating Bar) --- */
+.receipt-controls {
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back-btn, .action-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  transition: 0.2s;
+}
+
+.back-btn { background: #fff; color: #132B6B; }
+.action-btn.print { background: #132B6B; color: #E2C18D; }
+.action-btn.download { background: #B87333; color: white; }
+
+.control-group { display: flex; gap: 10px; }
+
+/* --- 8. PRINT LOGIC (MAGIC) --- */
+@media print {
+  .no-print, .receipt-controls { display: none !important; }
+  body, .receipt-view-root { background: white !important; padding: 0 !important; }
+  .luxe-receipt-paper {
+    box-shadow: none !important;
+    border: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+  }
+}

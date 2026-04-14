@@ -1,0 +1,212 @@
+/* ================= NAVBAR ROOT ================= */
+.luxe-dash-nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 2000;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(19, 43, 107, 0.08);
+  box-shadow: 0 4px 15px rgba(19, 43, 107, 0.04);
+  font-family: "Inter", sans-serif;
+  height: 72px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-container-luxe {
+  max-width: 1400px;
+  width: 94%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ================= LOGO FIX (CRITICAL) ================= */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo-brand {
+  display: flex;
+  align-items: center;
+  width: 150px; /* Constrains width */
+  height: 40px;  /* Constrains height */
+}
+
+.nav-brand-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Prevents stretching */
+}
+
+.nav-divider {
+  width: 1px;
+  height: 24px;
+  background: #e2e8f0;
+  margin: 0 5px;
+}
+
+.nav-context-tag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #B87333; /* Copper */
+  background: #FFF9F2;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  border: 1px solid rgba(184, 115, 51, 0.1);
+  white-space: nowrap;
+}
+
+/* ================= PROFILE TRIGGER ================= */
+.nav-right {
+  position: relative;
+}
+
+.profile-trigger {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #f8fafc;
+}
+
+.profile-trigger:hover {
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(19, 43, 107, 0.08);
+  border: 1px solid #E2C18D; /* Gold */
+}
+
+.avatar-box {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #132B6B; /* Navy */
+  color: #E2C18D;      /* Gold */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+.trigger-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #132B6B;
+}
+
+.rotate-icon {
+  transition: transform 0.3s ease;
+}
+
+/* ================= DROPDOWN BOX (FIXED WIDTH) ================= */
+.luxe-dropdown-menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  /* THE FIX: width fits content exactly */
+  width: max-content; 
+  min-width: 260px;
+  
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(19, 43, 107, 0.15);
+  border: 1px solid #F1F5F9;
+  overflow: hidden;
+  z-index: 2001;
+  animation: dropdownFade 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes dropdownFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-header {
+  /* padding: 20px 24px; */
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #FBFDFF;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.header-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #E2C18D;
+  color: #B87333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-name {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #132B6B;
+  white-space: nowrap; /* Forces one line */
+}
+
+.header-email {
+  font-size: 0.75rem;
+  color: #64748B;
+  white-space: nowrap; /* Forces one line */
+}
+
+.dropdown-links {
+  list-style: none;
+  padding: 10px;
+}
+
+.dropdown-links li {
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #475569;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: 0.2s;
+  white-space: nowrap; /* Forces one line */
+}
+
+.dropdown-links li:hover {
+  background: #F8FAFC;
+  color: #B87333;
+  padding-left: 24px; /* Subtle slide effect */
+}
+
+.dropdown-separator {
+  height: 1px;
+  background: #F1F5F9;
+  margin: 8px 12px;
+}
+
+.logout-link {
+  color: #B87333 !important;
+}
+
+.logout-link:hover {
+  background: #FFF1F2 !important;
+}
+

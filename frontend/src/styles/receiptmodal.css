@@ -1,0 +1,166 @@
+/* --- 1. MODAL OVERLAY --- */
+.luxe-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.7); /* Deep Slate Tint */
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2500;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+/* --- 2. MODAL CONTAINER --- */
+.receipt-modal-container {
+  background: #f1f5f9; /* Soft gray stage */
+  width: 100%;
+  max-width: 650px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* --- 3. TOP ACTION BAR --- */
+.receipt-modal-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.receipt-info p {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #64748b;
+  letter-spacing: 1px;
+}
+
+.receipt-id {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #132B6B; /* Navy */
+}
+
+.btn-group {
+  display: flex;
+  gap: 12px;
+}
+
+.download-pdf-btn {
+  background: #B87333; /* Copper */
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+.download-pdf-btn:hover {
+  background: #a0632a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(184, 115, 51, 0.3);
+}
+
+.close-modal-btn {
+  background: #f1f5f9;
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #64748b;
+  transition: 0.2s;
+}
+
+.close-modal-btn:hover {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+/* --- 4. THE RECEIPT PAPER --- */
+.receipt-paper {
+  background: white;
+  margin: 30px auto;
+  width: 85%;
+  padding: 50px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  border: 1px solid #e2e8f0;
+  font-family: 'Inter', 'serif';
+  position: relative;
+  min-height: 500px;
+}
+
+/* Decorative Watermark for PDF credibility */
+.receipt-paper::after {
+  content: "OFFICIAL";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  font-size: 5rem;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.02);
+  pointer-events: none;
+}
+
+.receipt-paper h1 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin: 0;
+  border-bottom: 2px solid #132B6B;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.receipt-paper p {
+  font-size: 0.95rem;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+.receipt-paper strong {
+  color: #132B6B;
+}
+
+/* Digital Signature Polish */
+.receipt-paper img {
+  filter: grayscale(1) contrast(1.5); /* Makes digital sig look like real ink */
+  mix-blend-mode: multiply; /* Blends with white paper background */
+}
+
+/* --- 5. RESPONSIVE --- */
+@media (max-width: 600px) {
+  .receipt-paper {
+    width: 95%;
+    padding: 30px 20px;
+  }
+  .receipt-modal-actions {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
